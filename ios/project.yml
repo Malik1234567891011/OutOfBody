@@ -20,7 +20,7 @@ settings:
     DEVELOPMENT_TEAM: Q7ZLXMG4SB
     CODE_SIGN_STYLE: Automatic
     MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
     # Meta (Facebook) App ID + Client Token for Info.plist. Keep in sync with Config.swift.
     META_APP_ID: "2392672664601825"
     META_CLIENT_TOKEN: "bc1f07767bfa326c14a2516377079a57"
