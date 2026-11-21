@@ -5,6 +5,8 @@ import { APP_NAME, Icon, CTA, Bottom, StatusBar, isStill } from './ui'
 const PRICE = 39.99
 const CUR = 'CAD'
 const perWeek = (PRICE / 52).toFixed(2)
+const WEEKLY = 3.99
+const savePct = Math.floor((1 - PRICE / 52 / WEEKLY) * 100)
 
 function trialEnd() {
   const d = new Date()
@@ -112,6 +114,7 @@ const TLRow = ({ icon, t, d, on }: { icon: string; t: string; d: string; on?: bo
 )
 
 export function PaywallP3({ a, back, close, buy }: { a: Answers; back: () => void; close: () => void; buy: () => void }) {
+  const [plan, setPlan] = useState<'year' | 'week'>('year')
   return (
     <div className="screen pw3">
       <img src="/img/paywall-hero.jpg" alt="" className="pw3-img" />
@@ -119,20 +122,30 @@ export function PaywallP3({ a, back, close, buy }: { a: Answers; back: () => voi
       <div className="pw-top abs"><button className="iconbtn" onClick={back}><Icon name="back" /></button><button className="iconbtn" onClick={close}><Icon name="close" /></button></div>
       <div className="pw3-body">
         <h1 className="pw3-h">Start your FREE trial<br />to continue</h1>
-        <div className="plan-sel">
+        <button className={`plan-sel ${plan === 'year' ? '' : 'off'}`} onClick={() => setPlan('year')}>
           <div className="plan-sel-top">7 DAYS FREE</div>
           <div className="plan-sel-row">
-            <span className="plan-radio"><Icon name="check" size={16} /></span>
+            <span className="plan-radio">{plan === 'year' && <Icon name="check" size={16} />}</span>
             <div className="plan-sel-txt">
-              <div className="pst-1">Start for free</div>
+              <div className="pst-1">Start for free &amp; save {savePct}%</div>
               <div className="pst-2">{money(PRICE)} {CUR} billed annually</div>
             </div>
             <div className="pst-price">${perWeek}/wk</div>
           </div>
-        </div>
+        </button>
+        <button className={`plan-alt ${plan === 'week' ? 'on' : ''}`} onClick={() => setPlan('week')}>
+          <span className="plan-radio">{plan === 'week' && <Icon name="check" size={16} />}</span>
+          <div className="plan-sel-txt">
+            <div className="pst-1">Weekly</div>
+            <div className="pst-2">Cancel anytime</div>
+          </div>
+          <div className="pst-price">${WEEKLY}/wk</div>
+        </button>
         <p className="pw3-quit">Nicotine-free by {fmtDate(quitDate(a))}. Keep {money(yearlySpend(a))} a year.</p>
-        <CTA onClick={buy}>Start my free week</CTA>
-        <p className="fine center legal">7 days free, then {money(PRICE)} {CUR} per year. Billed annually and renews automatically unless canceled in the App Store.</p>
+        <CTA onClick={buy}>{plan === 'year' ? 'Start my free week' : 'Continue'}</CTA>
+        <p className="fine center legal">{plan === 'year'
+          ? <>7 days free, then {money(PRICE)} {CUR} per year. Billed annually and renews automatically unless canceled in the App Store.</>
+          : <>${WEEKLY} {CUR} per week. Billed weekly and renews automatically unless canceled in the App Store.</>}</p>
         <p className="fine center links">Terms · Privacy · Restore</p>
       </div>
     </div>

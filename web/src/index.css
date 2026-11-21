@@ -269,8 +269,8 @@ input { font: inherit; }
 .ttl-d { font-size: 14px; color: var(--muted); margin-top: 2px; line-height: 1.35; }
 
 .pw3 { padding: 0; }
-.pw3-img { position: absolute; inset: 0 0 auto 0; width: 100%; height: 66%; object-fit: cover; }
-.pw3-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,9,14,.55) 0%, rgba(7,9,14,0) 18%, rgba(7,9,14,0) 36%, rgba(7,9,14,.75) 52%, var(--bg) 64%); }
+.pw3-img { position: absolute; inset: 0 0 auto 0; width: 100%; height: 58%; object-fit: cover; }
+.pw3-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,9,14,.55) 0%, rgba(7,9,14,0) 18%, rgba(7,9,14,0) 36%, rgba(7,9,14,.75) 52%, var(--bg) 56%); }
 .pw3-body { position: absolute; left: 22px; right: 22px; bottom: 30px; }
 .pw3-h { font-size: 33px; line-height: 1.08; font-weight: 780; letter-spacing: -.9px; text-align: center; margin-bottom: 22px; }
 .plan-sel { border: 2px solid var(--accent); border-radius: 22px; overflow: hidden; background: rgba(79,227,184,.08); }
@@ -290,3 +290,14 @@ input { font: inherit; }
 .cum-v { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cum-bar { width: 100%; max-width: 40px; border-radius: 8px 8px 4px 4px; background: linear-gradient(to top, rgba(255,107,107,.35), var(--danger)); }
 .cum-x { font-size: 11.5px; color: var(--muted); }
+button.plan-sel { display: block; width: 100%; text-align: left; }
+.plan-sel.off { border-color: var(--line); background: var(--surface); }
+.plan-sel.off .plan-sel-top { background: var(--surface2); color: var(--muted); }
+.plan-sel.off .plan-radio, .plan-alt .plan-radio { background: transparent; border: 1.5px solid #3a4253; }
+.plan-alt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; margin-top: 10px; padding: 15px 16px; border-radius: 22px; border: 2px solid var(--line); background: var(--surface); }
+.plan-alt.on { border-color: var(--accent); background: rgba(79,227,184,.08); }
+.plan-alt.on .plan-radio { background: var(--accent); border-color: var(--accent); }
+.plan-sel-row, .plan-alt { gap: 12px; }
+.pst-1 { font-size: 16px; letter-spacing: -.2px; white-space: nowrap; }
+.pst-2 { font-size: 14px; }
+.pst-price { font-size: 16px; white-space: nowrap; }
