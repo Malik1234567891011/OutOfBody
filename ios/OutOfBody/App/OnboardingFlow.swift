@@ -58,8 +58,12 @@ final class OnboardingModel: ObservableObject {
         return Double(pos + 1) / Double(scored.count)
     }
 
+    /// Answers as they were when the current step appeared (for onboarding_answered).
+    private var entered: Answers?
+
     func go(_ n: Int) {
         let target = max(0, min(ids.count - 1, n))
+        if target > idx { reportAnswer() }
         dir = target > idx ? 1 : -1
         withAnimation(.timingCurve(0.2, 0.8, 0.2, 1, duration: Env.still ? 0 : 0.32)) { idx = target }
     }
@@ -79,7 +83,31 @@ final class OnboardingModel: ObservableObject {
         }
     }
 
-    func finish() { onFinish(a) }
+    func finish() { reportAnswer(); onFinish(a) }
+
+    /// onboarding_step_viewed / paywall_page_viewed: one event per screen shown, so drop-off per screen is measurable.
+    func reportView() {
+        let i = idx, all = ids
+        let sid = all[min(i, all.count - 1)]
+        entered = a
+        if sid.hasPrefix("pw") {
+            Analytics.track("paywall_page_viewed", ["page": Int(sid.dropFirst(2)) ?? 0])
+        }
+        Analytics.track("onboarding_step_viewed", ["step_id": sid, "step_index": i, "total_steps": all.count, "device": a.device?.rawValue ?? "none"])
+    }
+
+    /// The value picked on the step being left (only fields that changed on it).
+    private func reportAnswer() {
+        guard let before = entered, before != a,
+              let b = try? JSONSerialization.jsonObject(with: JSONEncoder().encode(before)) as? [String: Any],
+              let n = try? JSONSerialization.jsonObject(with: JSONEncoder().encode(a)) as? [String: Any] else { return }
+        let changed = n.keys.sorted().filter { k in !NSDictionary(dictionary: [k: n[k]!]).isEqual(to: b[k].map { [k: $0] } ?? [:]) }
+        guard !changed.isEmpty else { return }
+        let fmt = { (v: Any) -> String in (v as? [Any]).map { $0.map { "\($0)" }.joined(separator: ",") } ?? "\(v)" }
+        let value = changed.count == 1 ? fmt(n[changed[0]]!) : changed.map { "\($0)=\(fmt(n[$0]!))" }.joined(separator: ";")
+        Analytics.track("onboarding_answered", ["step_id": id, "value": value])
+        entered = a
+    }
 }
 
 // MARK: - The flow host
@@ -96,6 +124,8 @@ struct OnboardingView: View {
         }
         .environmentObject(m)
         .preferredColorScheme(.dark)
+        .onAppear { m.reportView() }
+        .onChange(of: m.idx) { _, _ in m.reportView() }
     }
 
     @ViewBuilder func screen(_ id: String) -> some View {

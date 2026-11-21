@@ -54,4 +54,8 @@ enum Env {
     static let still = env["OOB_STILL"] == "1"
     static let preset = env["OOB_PRESET"]
     static let screen = env["OOB_SCREEN"]
+    /// App screenshots: OOB_SCENARIO=midweek OOB_TAB=plan OOB_SCROLL=560|end (OOB_SCREEN=none keeps auto overlays away)
+    static let scenario = env["OOB_SCENARIO"]
+    static let tab = env["OOB_TAB"]
+    static let scroll = env["OOB_SCROLL"]
 }

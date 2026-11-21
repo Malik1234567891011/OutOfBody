@@ -23,16 +23,32 @@ final class Store: ObservableObject {
         guard let product = products[id] else { error = "The App Store isn't available right now."; return false }
         purchasing = true
         defer { purchasing = false }
+        Analytics.track("purchase_started", ["product_id": id])
         do {
-            switch try await product.purchase() {
+            switch try await product.purchase(options: [.appAccountToken(UUID(uuidString: Analytics.distinctId) ?? UUID())]) {
             case .success(let v):
-                if case .verified(let t) = v { await t.finish(); return true }
+                if case .verified(let t) = v {
+                    await t.finish()
+                    let trial = t.offerType == .introductory
+                    Analytics.track("purchase_completed", ["product_id": id, "trial": trial, "price": NSDecimalNumber(decimal: product.price).doubleValue, "currency": product.priceFormatStyle.currencyCode])
+                    if trial {
+                        AppGroup.defaults.set(Date(), forKey: "oob.trialStart")
+                        Analytics.track("trial_started", ["product_id": id])
+                    }
+                    return true
+                }
                 error = "We couldn't verify that purchase."
-            case .pending: error = "Purchase pending approval."
-            case .userCancelled: break
+                Analytics.track("purchase_failed", ["product_id": id, "reason": "unverified"])
+            case .pending:
+                error = "Purchase pending approval."
+                Analytics.track("purchase_failed", ["product_id": id, "reason": "pending"])
+            case .userCancelled: Analytics.track("purchase_cancelled", ["product_id": id])
             @unknown default: break
             }
-        } catch { self.error = error.localizedDescription }
+        } catch {
+            self.error = error.localizedDescription
+            Analytics.track("purchase_failed", ["product_id": id, "reason": error.localizedDescription])
+        }
         return false
     }
 

@@ -8,6 +8,12 @@ packages:
   SuperwallKit:
     url: https://github.com/superwall/Superwall-iOS
     from: 4.19.1
+  PostHog:
+    url: https://github.com/PostHog/posthog-ios
+    from: 3.30.0
+  Facebook:
+    url: https://github.com/facebook/facebook-ios-sdk
+    from: 18.0.0
 settings:
   base:
     SWIFT_VERSION: "5.0"
@@ -15,14 +21,44 @@ settings:
     CODE_SIGN_STYLE: Automatic
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
+    # Meta (Facebook) App ID + Client Token for Info.plist. Keep in sync with Config.swift.
+    META_APP_ID: "2392672664601825"
+    META_CLIENT_TOKEN: "bc1f07767bfa326c14a2516377079a57"
 targets:
   OutOfBody:
     type: application
     platform: iOS
     sources:
       - path: OutOfBody
+      - path: Shared
     dependencies:
       - package: SuperwallKit
+      - package: PostHog
+      - package: Facebook
+        product: FacebookCore
+      - target: OutOfBodyWidgets
+    entitlements:
+      path: OutOfBody/OutOfBody.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.malikshourbaji.outofbody
+    info:
+      path: OutOfBody/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleURLName: com.malikshourbaji.outofbody
+            CFBundleURLSchemes: [outofbody, fb$(META_APP_ID)]
+        FacebookAppID: $(META_APP_ID)
+        FacebookClientToken: $(META_CLIENT_TOKEN)
+        FacebookDisplayName: OutOfBody
+        FacebookAutoLogAppEventsEnabled: true
+        # Turned on at runtime only after the user allows tracking (ATT).
+        FacebookAdvertiserIDCollectionEnabled: false
+        ITSAppUsesNonExemptEncryption: false
+        NSUserTrackingUsageDescription: Lets us see which ads brought you here, so we can find more people who want to quit.
+        SKAdNetworkItems:
+          - SKAdNetworkIdentifier: v9wttpbfk9.skadnetwork
+          - SKAdNetworkIdentifier: n38lu8286q.skadnetwork
     settings:
       base:
         PRODUCT_NAME: OutOfBody
@@ -36,11 +72,37 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  OutOfBodyWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widgets
+      - path: Shared
+    entitlements:
+      path: Widgets/Widgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.malikshourbaji.outofbody
+    info:
+      path: Widgets/Info.plist
+      properties:
+        CFBundleDisplayName: OutOfBody
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_NAME: OutOfBodyWidgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.malikshourbaji.outofbody.widgets
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: OutOfBody
+        TARGETED_DEVICE_FAMILY: "1"
+        SKIP_INSTALL: YES
 schemes:
   OutOfBody:
     build:
       targets:
         OutOfBody: all
+        OutOfBodyWidgets: all
     run:
       config: Debug
       storeKitConfiguration: OutOfBody/Resources/OutOfBody.storekit

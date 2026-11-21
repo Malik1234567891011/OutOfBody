@@ -21,6 +21,20 @@
                ReferencedContainer = "container:OutOfBody.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B1806C51A02852A952DF859"
+               BuildableName = "OutOfBodyWidgets.appex"
+               BlueprintName = "OutOfBodyWidgets"
+               ReferencedContainer = "container:OutOfBody.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

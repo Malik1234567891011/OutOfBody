@@ -33,7 +33,7 @@ struct PaywallP1: View {
     @EnvironmentObject var m: OnboardingModel
     var body: some View {
         ScreenBox(top: 54) {
-            PwTop(onClose: { m.go(to: "pw3") }).padding(.horizontal, -8)
+            PwTop(onClose: { Analytics.track("paywall_closed", ["page": 1]); m.go(to: "pw3") }).padding(.horizontal, -8)
             Lines(text: "We want you to try\nOutOfBody for free", size: 28, tracking: -0.6).padding(.top, 4)
             ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
@@ -129,6 +129,7 @@ struct PaywallP3: View {
     @EnvironmentObject var m: OnboardingModel
     @StateObject private var store = Store.shared
     @State private var yearly = true
+    @State private var web: URL?
     func radio(_ on: Bool) -> some View {
         ZStack {
             Circle().fill(on ? T.accent : .clear)
@@ -151,13 +152,13 @@ struct PaywallP3: View {
                     .init(color: T.bgA(0.75), location: 0.52),
                     .init(color: T.bg, location: 0.56),
                 ], startPoint: .top, endPoint: .bottom)
-                PwTop(onBack: { m.go(m.idx - 1) }, onClose: { m.go(to: "pw1") })
+                PwTop(onBack: { m.go(m.idx - 1) }, onClose: { Analytics.track("paywall_closed", ["page": 3]); Analytics.askTrackingOnce(); m.go(to: "pw1") })
                     .padding(.horizontal, 14).padding(.top, 54)
                 VStack(spacing: 0) {
                     Spacer()
                     Lines(text: "Start your FREE trial\nto continue", size: 33, weight: 780, lineHeight: 1.08, tracking: -0.9)
                         .padding(.bottom, 22)
-                    Button { yearly = true } label: {
+                    Button { yearly = true; Analytics.track("paywall_plan_selected", ["product_id": Config.productId]) } label: {
                         VStack(spacing: 0) {
                             Text("7 DAYS FREE").font(sf(13, 800)).tracking(1.6).foregroundStyle(yearly ? T.accentInk : T.muted)
                                 .frame(maxWidth: .infinity).padding(.vertical, 6).background(yearly ? T.accent : T.surface2)
@@ -179,7 +180,7 @@ struct PaywallP3: View {
                         .contentShape(RoundedRectangle(cornerRadius: 22))
                     }
                     .buttonStyle(.plain)
-                    Button { yearly = false } label: {
+                    Button { yearly = false; Analytics.track("paywall_plan_selected", ["product_id": Config.weeklyProductId]) } label: {
                         HStack(spacing: 12) {
                             radio(!yearly)
                             VStack(alignment: .leading, spacing: 2) {
@@ -208,8 +209,11 @@ struct PaywallP3: View {
                          : "$\(WEEKLY_STR) \(CUR) per week. Billed weekly and renews automatically unless canceled in the App Store.")
                         .padding(.top, 12)
                     HStack(spacing: 0) {
-                        Text("Terms · Privacy · ")
-                        Button("Restore") { Task { if await store.restore() { m.finish() } } }.buttonStyle(.plain)
+                        Button("Terms") { web = Legal.terms }.buttonStyle(.plain)
+                        Text(" · ")
+                        Button("Privacy") { web = Legal.privacy }.buttonStyle(.plain)
+                        Text(" · ")
+                        Button("Restore") { Task { if await restoreAll() { m.finish() } } }.buttonStyle(.plain)
                     }
                     .font(sf(12.5)).foregroundStyle(T.muted)
                     .padding(.top, 8)
@@ -221,6 +225,7 @@ struct PaywallP3: View {
             }
         }
         .ignoresSafeArea()
+        .sheet(item: $web) { SafariSheet(url: $0).ignoresSafeArea() }
         .task { await store.load() }
     }
 }

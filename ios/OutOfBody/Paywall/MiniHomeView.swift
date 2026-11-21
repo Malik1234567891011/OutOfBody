@@ -97,21 +97,3 @@ struct MiniStatusBar: View {
         .frame(height: 32.4)
     }
 }
-
-/// Placeholder home after purchase: the mini home, full screen.
-struct HomeView: View {
-    let a: Answers
-    var body: some View {
-        GeometryReader { g in
-            let s = (g.size.width - 24) / 220
-            ZStack(alignment: .top) {
-                T.bg.ignoresSafeArea()
-                MiniHomeView(a: a, animated: false)
-                    .frame(width: 220, height: 440)
-                    .scaleEffect(s, anchor: .top)
-                    .frame(maxWidth: .infinity)
-            }
-        }
-        .preferredColorScheme(.dark)
-    }
-}

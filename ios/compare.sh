@@ -1,5 +1,6 @@
 #!/bin/zsh
-# Side-by-side React (left) vs iOS (right) for each screen: shots/compare/<preset>/<n>.png
+# Side-by-side React (left) vs iOS (right) for each screen: shots/compare/<set>/<n>.png
+# sets: disposable, pouch (onboarding via shoot.sh) and app (post-paywall app via shoot-app.sh)
 cd "${0:A:h}"
 for p in "$@"; do
   mkdir -p shots/compare/$p

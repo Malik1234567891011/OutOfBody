@@ -7,46 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0368C8CCA5F29ADCDC742E3E /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA411CAEC7E47935A14F991 /* PlanView.swift */; };
 		03C1AF45D20D3B4A059FCA5D /* MiniHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A980C06EA6A10DB9CD57DEB /* MiniHomeView.swift */; };
+		1063BB774347BC9B489E781D /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1E4B0FCA902EDF7FC5182 /* Calc.swift */; };
+		109382EC7C9E63957A9CC9CD /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211E2CCC5B727CB2BC5EBF6 /* SharedStore.swift */; };
+		12CD9E03DFADB495374AC01C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308C2E1F0C6702632318469 /* Theme.swift */; };
+		18149CA6DA59A70EB2C3C5FF /* SosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A2B9559574E386382FC34 /* SosView.swift */; };
+		1AF7B230BCE73CE032DB8A38 /* PostHog in Frameworks */ = {isa = PBXBuildFile; productRef = 138B7BAD6CC1F42B5868E542 /* PostHog */; };
+		242C544D1539AE5A1980F606 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9F431C84A75503F111A5B1 /* AppState.swift */; };
+		258C3340D5EF59DA4151B9A2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3901A2DD9A571A7B351E73E6 /* Notifications.swift */; };
 		25A87C20CAEB23663EC31E1E /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99CE3422C1C7A4A1756F10 /* AppRoot.swift */; };
+		2AF6FDBDA2659B91707D80B3 /* LogHitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13A6DCCEBD066CF83BEE270 /* LogHitIntent.swift */; };
 		2EB9C230D2C895DC5ADF1FF4 /* DemoScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055DB5735CB72AC9213C83F /* DemoScreens.swift */; };
-		3C707ECA05839ECE83E66BAB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519BFED47E45B57F6BFFC50 /* Theme.swift */; };
+		3311B6A418EF8AF298AEE28A /* YouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496576754B8245D5172AE35E /* YouView.swift */; };
+		3A4F0A20F9003B7906F53E79 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9F431C84A75503F111A5B1 /* AppState.swift */; };
 		44E6721C36E343126B8508A3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDDE3C2F220CD0ED1F6F88B /* Config.swift */; };
 		46D34480445C131A19EFF1A2 /* lungs-after.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26D1BF1F7312421793462412 /* lungs-after.jpg */; };
 		4768D214BC596F40C586027E /* OutOfBody.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 48C6CF149E47EA8A80B9EA69 /* OutOfBody.storekit */; };
+		5347A70D0FCF245A24408ED8 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211E2CCC5B727CB2BC5EBF6 /* SharedStore.swift */; };
 		53BF2578413ECE2FB18A47DC /* paywall-hero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A7CB063F6CC4D692E19EDFE /* paywall-hero.jpg */; };
+		5F0F9B1CC2E6F3BD879030AE /* AppShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F346619A6B9E910A05BF29 /* AppShell.swift */; };
+		66047D1535131A91E02807C2 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD3445B2F67DA5E69D9D1 /* TodayView.swift */; };
 		69A615F7BB29D0BBA04C88FC /* ResultScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88EEC9D104F7B7A0EFEDFF /* ResultScreens.swift */; };
 		6B596F6594E8AE2A6BC02BE5 /* Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A52AA6426B3F1FFE0C6E12 /* Paywall.swift */; };
 		83248502A71A0B047EFE5893 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62FF323FB374129EF675844 /* Store.swift */; };
+		8DA729A0AB003C21427A2EFC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AA527FA77C15989D2C645F /* WelcomeView.swift */; };
+		8F68EA3DEE084D93F94FECDA /* OutOfBodyWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E400AE634DDEA4FF99DE0A6C /* OutOfBodyWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8FFE4D62EFADAA125F3E927D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4E19770B25789EA2D34398D7 /* PrivacyInfo.xcprivacy */; };
 		947B377901F2FDBEAD9B5499 /* lungs-before.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 851D909DF25B49E7DEC1F480 /* lungs-before.jpg */; };
 		99B53E3547E860877F4536D0 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 968F507DB9C2C92FD0ACE2E1 /* SuperwallKit */; };
+		99DA0C345294C7576E5AA63D /* LogHitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13A6DCCEBD066CF83BEE270 /* LogHitIntent.swift */; };
+		9AF67D61BC0FC14CC29A4462 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1E4B0FCA902EDF7FC5182 /* Calc.swift */; };
 		A6B2A10D19ABE6D3541CA23A /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA42B7BA83DCEC890B5D82 /* OnboardingFlow.swift */; };
+		AFA5001AA166915096EE3FC8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308C2E1F0C6702632318469 /* Theme.swift */; };
 		BD03ABF16DE74C858B3FFFFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CAC4AEE7A538F2C8029577 /* Assets.xcassets */; };
+		BD5C4E79F66C580581CFDF78 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B5BB1C54420C06FB749D5 /* AppModel.swift */; };
+		BF6F3DCF10ED532638C57B8C /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F2B1D714317E18D807917 /* Analytics.swift */; };
+		C4DF8D3A272AD5BDEB0B0123 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84B745AC1E1E4F6DA5785907 /* FacebookCore */; };
 		C6431229A0C693E4854854DB /* QuizScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF390411909DD63EC364FB85 /* QuizScreens.swift */; };
+		C6B49FF69A810FE5B1308B70 /* OOBWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D9DAE86EB93747269802E /* OOBWidgets.swift */; };
 		D028B289AE8606BB093E2627 /* PaywallGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C12F83E77364469BA0FA1 /* PaywallGate.swift */; };
-		EC5AC26015ACFDC0E8A9C0F5 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DEE9DE2960D0D0F8C6A0 /* Calc.swift */; };
+		D7A6BEB4711989594C22F2C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 37A9750A84EBA91752A99D26 /* PrivacyInfo.xcprivacy */; };
+		E66E77DB01776A83AF1D5983 /* ReviewFreeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A574E08770D48FF921894C /* ReviewFreeViews.swift */; };
+		ED01FB45079D5FC57387EBA9 /* Bits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B4E635AFC6EEC639D760A0 /* Bits.swift */; };
 		FDC51DBDD6BD7C5CF26C3F8E /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC83FA1D2AF3FE8676285A1 /* Components.swift */; };
+		FF290648F74189CEEC52937B /* Scenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0185D3164B9538FC9B25F8B /* Scenarios.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E10E9389DBE0ECE20E58ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0458977BC70940F6B0029424 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1806C51A02852A952DF859;
+			remoteInfo = OutOfBodyWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C319D5BABFD2AFB8CFD7DEC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F68EA3DEE084D93F94FECDA /* OutOfBodyWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0055DB5735CB72AC9213C83F /* DemoScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreens.swift; sourceTree = "<group>"; };
 		0A980C06EA6A10DB9CD57DEB /* MiniHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniHomeView.swift; sourceTree = "<group>"; };
 		0C99CE3422C1C7A4A1756F10 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
+		1AC671FC434933B3BA5A6292 /* OutOfBody.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OutOfBody.entitlements; sourceTree = "<group>"; };
+		24A574E08770D48FF921894C /* ReviewFreeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFreeViews.swift; sourceTree = "<group>"; };
 		26D1BF1F7312421793462412 /* lungs-after.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lungs-after.jpg"; sourceTree = "<group>"; };
 		28EA42B7BA83DCEC890B5D82 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		2EC83FA1D2AF3FE8676285A1 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		37A9750A84EBA91752A99D26 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3901A2DD9A571A7B351E73E6 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		3AE68A0A02241E9653953FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		47F346619A6B9E910A05BF29 /* AppShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShell.swift; sourceTree = "<group>"; };
 		48C6CF149E47EA8A80B9EA69 /* OutOfBody.storekit */ = {isa = PBXFileReference; path = OutOfBody.storekit; sourceTree = "<group>"; };
+		496576754B8245D5172AE35E /* YouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouView.swift; sourceTree = "<group>"; };
 		4CDDE3C2F220CD0ED1F6F88B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4E19770B25789EA2D34398D7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5A7CB063F6CC4D692E19EDFE /* paywall-hero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paywall-hero.jpg"; sourceTree = "<group>"; };
-		6519BFED47E45B57F6BFFC50 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5E9F431C84A75503F111A5B1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		60AA527FA77C15989D2C645F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		632B5BB1C54420C06FB749D5 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		64B4E635AFC6EEC639D760A0 /* Bits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bits.swift; sourceTree = "<group>"; };
+		72C1E4B0FCA902EDF7FC5182 /* Calc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calc.swift; sourceTree = "<group>"; };
+		736D9DAE86EB93747269802E /* OOBWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOBWidgets.swift; sourceTree = "<group>"; };
 		73CAC4AEE7A538F2C8029577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79FFD3445B2F67DA5E69D9D1 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		851D909DF25B49E7DEC1F480 /* lungs-before.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lungs-before.jpg"; sourceTree = "<group>"; };
 		86A52AA6426B3F1FFE0C6E12 /* Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall.swift; sourceTree = "<group>"; };
+		9A2E81EA140CA71208185AB7 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
+		A0185D3164B9538FC9B25F8B /* Scenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenarios.swift; sourceTree = "<group>"; };
 		A36DF4E66CF44B854FFEB4A9 /* OutOfBody.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutOfBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62FF323FB374129EF675844 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		A762DEE9DE2960D0D0F8C6A0 /* Calc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calc.swift; sourceTree = "<group>"; };
 		AC7C12F83E77364469BA0FA1 /* PaywallGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallGate.swift; sourceTree = "<group>"; };
 		AD88EEC9D104F7B7A0EFEDFF /* ResultScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreens.swift; sourceTree = "<group>"; };
+		AF1BDDDB3BF78DFE444E118C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BEA411CAEC7E47935A14F991 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		DF0A2B9559574E386382FC34 /* SosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SosView.swift; sourceTree = "<group>"; };
+		E211E2CCC5B727CB2BC5EBF6 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		E308C2E1F0C6702632318469 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E400AE634DDEA4FF99DE0A6C /* OutOfBodyWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OutOfBodyWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6F2B1D714317E18D807917 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		F13A6DCCEBD066CF83BEE270 /* LogHitIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHitIntent.swift; sourceTree = "<group>"; };
 		FF390411909DD63EC364FB85 /* QuizScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,18 +129,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B53E3547E860877F4536D0 /* SuperwallKit in Frameworks */,
+				1AF7B230BCE73CE032DB8A38 /* PostHog in Frameworks */,
+				C4DF8D3A272AD5BDEB0B0123 /* FacebookCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C20C20BD858FF62C291E31A /* Model */ = {
+		0E19228F2C65DE03BFE0BE03 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				A762DEE9DE2960D0D0F8C6A0 /* Calc.swift */,
+				3AE68A0A02241E9653953FF3 /* Info.plist */,
+				736D9DAE86EB93747269802E /* OOBWidgets.swift */,
+				4E19770B25789EA2D34398D7 /* PrivacyInfo.xcprivacy */,
+				9A2E81EA140CA71208185AB7 /* Widgets.entitlements */,
 			);
-			path = Model;
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		0F6DCBDDE7C2241EDA866BC8 /* Paywall */ = {
@@ -84,8 +162,10 @@
 		1E6077650B7B30AE729342B9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EC6F2B1D714317E18D807917 /* Analytics.swift */,
 				0C99CE3422C1C7A4A1756F10 /* AppRoot.swift */,
 				4CDDE3C2F220CD0ED1F6F88B /* Config.swift */,
+				3901A2DD9A571A7B351E73E6 /* Notifications.swift */,
 				28EA42B7BA83DCEC890B5D82 /* OnboardingFlow.swift */,
 			);
 			path = App;
@@ -99,23 +179,53 @@
 				851D909DF25B49E7DEC1F480 /* lungs-before.jpg */,
 				48C6CF149E47EA8A80B9EA69 /* OutOfBody.storekit */,
 				5A7CB063F6CC4D692E19EDFE /* paywall-hero.jpg */,
+				37A9750A84EBA91752A99D26 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3859FD8F633CC2BFF71A4895 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5E9F431C84A75503F111A5B1 /* AppState.swift */,
+				72C1E4B0FCA902EDF7FC5182 /* Calc.swift */,
+				F13A6DCCEBD066CF83BEE270 /* LogHitIntent.swift */,
+				E211E2CCC5B727CB2BC5EBF6 /* SharedStore.swift */,
+				E308C2E1F0C6702632318469 /* Theme.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		4129FA0DA1B940148489A23B /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				2EC83FA1D2AF3FE8676285A1 /* Components.swift */,
-				6519BFED47E45B57F6BFFC50 /* Theme.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		7BD5A904AE7EA8E6D671FCC7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				632B5BB1C54420C06FB749D5 /* AppModel.swift */,
+				47F346619A6B9E910A05BF29 /* AppShell.swift */,
+				64B4E635AFC6EEC639D760A0 /* Bits.swift */,
+				BEA411CAEC7E47935A14F991 /* PlanView.swift */,
+				24A574E08770D48FF921894C /* ReviewFreeViews.swift */,
+				A0185D3164B9538FC9B25F8B /* Scenarios.swift */,
+				DF0A2B9559574E386382FC34 /* SosView.swift */,
+				79FFD3445B2F67DA5E69D9D1 /* TodayView.swift */,
+				60AA527FA77C15989D2C645F /* WelcomeView.swift */,
+				496576754B8245D5172AE35E /* YouView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		ACD22054F18FA0BB18911991 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A36DF4E66CF44B854FFEB4A9 /* OutOfBody.app */,
+				E400AE634DDEA4FF99DE0A6C /* OutOfBodyWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				DE28AE05E5D3F607A055A113 /* OutOfBody */,
+				3859FD8F633CC2BFF71A4895 /* Shared */,
+				0E19228F2C65DE03BFE0BE03 /* Widgets */,
 				ACD22054F18FA0BB18911991 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,8 +243,10 @@
 		DE28AE05E5D3F607A055A113 /* OutOfBody */ = {
 			isa = PBXGroup;
 			children = (
+				AF1BDDDB3BF78DFE444E118C /* Info.plist */,
+				1AC671FC434933B3BA5A6292 /* OutOfBody.entitlements */,
 				1E6077650B7B30AE729342B9 /* App */,
-				0C20C20BD858FF62C291E31A /* Model */,
+				7BD5A904AE7EA8E6D671FCC7 /* Main */,
 				0F6DCBDDE7C2241EDA866BC8 /* Paywall */,
 				358F476FFFDA026ACA21A9C2 /* Resources */,
 				EC73F031E73C08A0E671E512 /* Screens */,
@@ -154,6 +268,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6B1806C51A02852A952DF859 /* OutOfBodyWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43234CC368C9E22BCCD7F228 /* Build configuration list for PBXNativeTarget "OutOfBodyWidgets" */;
+			buildPhases = (
+				0C77651E10ECF57C93082A19 /* Sources */,
+				1B3862C67347966EE2177DF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OutOfBodyWidgets;
+			packageProductDependencies = (
+			);
+			productName = OutOfBodyWidgets;
+			productReference = E400AE634DDEA4FF99DE0A6C /* OutOfBodyWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FA43F0CF37232FF1262832C8 /* OutOfBody */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0477FC6D380A85361A49AD6 /* Build configuration list for PBXNativeTarget "OutOfBody" */;
@@ -161,14 +293,18 @@
 				C1DFBA4559B557E11062AECC /* Sources */,
 				8E0AB3F2DE434BD0A80BC10D /* Resources */,
 				C21EC22711A650D81D537FD5 /* Frameworks */,
+				2C319D5BABFD2AFB8CFD7DEC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				58D268F990778A1E8191F3D5 /* PBXTargetDependency */,
 			);
 			name = OutOfBody;
 			packageProductDependencies = (
 				968F507DB9C2C92FD0ACE2E1 /* SuperwallKit */,
+				138B7BAD6CC1F42B5868E542 /* PostHog */,
+				84B745AC1E1E4F6DA5785907 /* FacebookCore */,
 			);
 			productName = OutOfBody;
 			productReference = A36DF4E66CF44B854FFEB4A9 /* OutOfBody.app */;
@@ -183,6 +319,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					6B1806C51A02852A952DF859 = {
+						DevelopmentTeam = Q7ZLXMG4SB;
+						ProvisioningStyle = Automatic;
+					};
 					FA43F0CF37232FF1262832C8 = {
 						DevelopmentTeam = Q7ZLXMG4SB;
 						ProvisioningStyle = Automatic;
@@ -199,6 +339,8 @@
 			mainGroup = B699D42B38640E8A893A07A0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				EBF8F533079E0E2C5C9C2B7D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				AC770888732BDB320E225A26 /* XCRemoteSwiftPackageReference "posthog-ios" */,
 				E2D3BB7E66AFDB509A21AB2D /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -207,17 +349,27 @@
 			projectRoot = "";
 			targets = (
 				FA43F0CF37232FF1262832C8 /* OutOfBody */,
+				6B1806C51A02852A952DF859 /* OutOfBodyWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B3862C67347966EE2177DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FFE4D62EFADAA125F3E927D /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8E0AB3F2DE434BD0A80BC10D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD03ABF16DE74C858B3FFFFF /* Assets.xcassets in Resources */,
 				4768D214BC596F40C586027E /* OutOfBody.storekit in Resources */,
+				D7A6BEB4711989594C22F2C1 /* PrivacyInfo.xcprivacy in Resources */,
 				46D34480445C131A19EFF1A2 /* lungs-after.jpg in Resources */,
 				947B377901F2FDBEAD9B5499 /* lungs-before.jpg in Resources */,
 				53BF2578413ECE2FB18A47DC /* paywall-hero.jpg in Resources */,
@@ -227,29 +379,85 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C77651E10ECF57C93082A19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242C544D1539AE5A1980F606 /* AppState.swift in Sources */,
+				9AF67D61BC0FC14CC29A4462 /* Calc.swift in Sources */,
+				2AF6FDBDA2659B91707D80B3 /* LogHitIntent.swift in Sources */,
+				C6B49FF69A810FE5B1308B70 /* OOBWidgets.swift in Sources */,
+				5347A70D0FCF245A24408ED8 /* SharedStore.swift in Sources */,
+				AFA5001AA166915096EE3FC8 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1DFBA4559B557E11062AECC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6F3DCF10ED532638C57B8C /* Analytics.swift in Sources */,
+				BD5C4E79F66C580581CFDF78 /* AppModel.swift in Sources */,
 				25A87C20CAEB23663EC31E1E /* AppRoot.swift in Sources */,
-				EC5AC26015ACFDC0E8A9C0F5 /* Calc.swift in Sources */,
+				5F0F9B1CC2E6F3BD879030AE /* AppShell.swift in Sources */,
+				3A4F0A20F9003B7906F53E79 /* AppState.swift in Sources */,
+				ED01FB45079D5FC57387EBA9 /* Bits.swift in Sources */,
+				1063BB774347BC9B489E781D /* Calc.swift in Sources */,
 				FDC51DBDD6BD7C5CF26C3F8E /* Components.swift in Sources */,
 				44E6721C36E343126B8508A3 /* Config.swift in Sources */,
 				2EB9C230D2C895DC5ADF1FF4 /* DemoScreens.swift in Sources */,
+				99DA0C345294C7576E5AA63D /* LogHitIntent.swift in Sources */,
 				03C1AF45D20D3B4A059FCA5D /* MiniHomeView.swift in Sources */,
+				258C3340D5EF59DA4151B9A2 /* Notifications.swift in Sources */,
 				A6B2A10D19ABE6D3541CA23A /* OnboardingFlow.swift in Sources */,
 				6B596F6594E8AE2A6BC02BE5 /* Paywall.swift in Sources */,
 				D028B289AE8606BB093E2627 /* PaywallGate.swift in Sources */,
+				0368C8CCA5F29ADCDC742E3E /* PlanView.swift in Sources */,
 				C6431229A0C693E4854854DB /* QuizScreens.swift in Sources */,
 				69A615F7BB29D0BBA04C88FC /* ResultScreens.swift in Sources */,
+				E66E77DB01776A83AF1D5983 /* ReviewFreeViews.swift in Sources */,
+				FF290648F74189CEEC52937B /* Scenarios.swift in Sources */,
+				109382EC7C9E63957A9CC9CD /* SharedStore.swift in Sources */,
+				18149CA6DA59A70EB2C3C5FF /* SosView.swift in Sources */,
 				83248502A71A0B047EFE5893 /* Store.swift in Sources */,
-				3C707ECA05839ECE83E66BAB /* Theme.swift in Sources */,
+				12CD9E03DFADB495374AC01C /* Theme.swift in Sources */,
+				66047D1535131A91E02807C2 /* TodayView.swift in Sources */,
+				8DA729A0AB003C21427A2EFC /* WelcomeView.swift in Sources */,
+				3311B6A418EF8AF298AEE28A /* YouView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		58D268F990778A1E8191F3D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B1806C51A02852A952DF859 /* OutOfBodyWidgets */;
+			targetProxy = 1E10E9389DBE0ECE20E58ABB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0C38EA3AF49C7E02373A1192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OutOfBody;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.malikshourbaji.outofbody.widgets;
+				PRODUCT_NAME = OutOfBodyWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		5470B94EA094047A154049E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +514,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
+				META_APP_ID = 2392672664601825;
+				META_CLIENT_TOKEN = bc1f07767bfa326c14a2516377079a57;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -321,8 +531,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OutOfBody/OutOfBody.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OutOfBody/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OutOfBody;
 				INFOPLIST_KEY_UILaunchScreen_BackgroundColor = LaunchBG;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +548,26 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.malikshourbaji.outofbody;
 				PRODUCT_NAME = OutOfBody;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		743D9FD8664D66723EAB3490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OutOfBody;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.malikshourbaji.outofbody.widgets;
+				PRODUCT_NAME = OutOfBodyWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -390,6 +622,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
+				META_APP_ID = 2392672664601825;
+				META_CLIENT_TOKEN = bc1f07767bfa326c14a2516377079a57;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,8 +638,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OutOfBody/OutOfBody.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OutOfBody/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OutOfBody;
 				INFOPLIST_KEY_UILaunchScreen_BackgroundColor = LaunchBG;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,6 +662,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		43234CC368C9E22BCCD7F228 /* Build configuration list for PBXNativeTarget "OutOfBodyWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C38EA3AF49C7E02373A1192 /* Debug */,
+				743D9FD8664D66723EAB3490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		B0477FC6D380A85361A49AD6 /* Build configuration list for PBXNativeTarget "OutOfBody" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -447,6 +692,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC770888732BDB320E225A26 /* XCRemoteSwiftPackageReference "posthog-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PostHog/posthog-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.30.0;
+			};
+		};
 		E2D3BB7E66AFDB509A21AB2D /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/superwall/Superwall-iOS";
@@ -455,9 +708,27 @@
 				minimumVersion = 4.19.1;
 			};
 		};
+		EBF8F533079E0E2C5C9C2B7D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 18.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		138B7BAD6CC1F42B5868E542 /* PostHog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC770888732BDB320E225A26 /* XCRemoteSwiftPackageReference "posthog-ios" */;
+			productName = PostHog;
+		};
+		84B745AC1E1E4F6DA5785907 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBF8F533079E0E2C5C9C2B7D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
 		968F507DB9C2C92FD0ACE2E1 /* SuperwallKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E2D3BB7E66AFDB509A21AB2D /* XCRemoteSwiftPackageReference "Superwall-iOS" */;

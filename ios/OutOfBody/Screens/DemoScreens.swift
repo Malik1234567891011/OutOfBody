@@ -193,9 +193,7 @@ struct Notify: View {
         } bottom: {
             BottomBar {
                 CTA(title: "Turn on check-ins") {
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
-                        DispatchQueue.main.async { m.next() }
-                    }
+                    Notifs.request { _ in m.next() }
                 }
                 Button { m.next() } label: {
                     Text("Not now").font(sf(15)).foregroundStyle(T.muted)
@@ -215,6 +213,7 @@ struct Commit: View {
     @State private var strokes: [[CGPoint]] = []
     @State private var has = false
     @State private var drawing = false
+    @State private var padSize = CGSize(width: 350, height: 170)
     var body: some View {
         let date = Calc.fmtDate(Calc.quitDate(m.a), withYear: true)
         ScreenBox {
@@ -234,6 +233,7 @@ struct Commit: View {
                     }
                 }
                 .frame(maxWidth: .infinity).frame(height: 170)
+                .onGeometryChange(for: CGSize.self) { $0.size } action: { padSize = $0 }
                 .background(RoundedRectangle(cornerRadius: 18).fill(Color(hex: 0xF4F5F7)))
                 .clipShape(RoundedRectangle(cornerRadius: 18))
                 .gesture(DragGesture(minimumDistance: 0)
@@ -256,8 +256,31 @@ struct Commit: View {
             }
             .frame(height: 170)
         } bottom: {
-            BottomBar { CTA(title: "I commit", disabled: !has) { m.set { $0.signed = true }; m.next() } }
+            BottomBar { CTA(title: "I commit", disabled: !has) { saveSignature(); m.set { $0.signed = true }; m.next() } }
         }
+    }
+}
+
+extension Commit {
+    /// The pledge signature, saved as a transparent PNG in the App Group (shown on Reasons and You › My pledge).
+    @MainActor func saveSignature() {
+        let pts = strokes.flatMap { $0 }
+        guard let minX = pts.map(\.x).min(), let maxX = pts.map(\.x).max(), let minY = pts.map(\.y).min(), let maxY = pts.map(\.y).max() else { return }
+        let pad: CGFloat = 6
+        let box = CGRect(x: minX - pad, y: minY - pad, width: max(1, maxX - minX + 2 * pad), height: max(1, maxY - minY + 2 * pad))
+        let lines = strokes
+        let view = Canvas { ctx, _ in
+            for s in lines where !s.isEmpty {
+                var p = Path(); p.move(to: s[0])
+                for q in s.dropFirst() { p.addLine(to: q) }
+                ctx.translateBy(x: 0, y: 0)
+                ctx.stroke(p.applying(CGAffineTransform(translationX: -box.minX, y: -box.minY)), with: .color(Color(hex: 0x0B0F17)), style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
+            }
+        }
+        .frame(width: box.width, height: box.height)
+        let r = ImageRenderer(content: view)
+        r.scale = 3
+        if let data = r.uiImage?.pngData() { try? data.write(to: AppGroup.signatureURL, options: .atomic) }
     }
 }
 
