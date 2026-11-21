@@ -24,6 +24,7 @@ export interface Answers {
   age?: string
   weeks?: number
   signed?: boolean
+  signature?: string // PNG data URL of the pledge signature
 }
 
 export const usesVape = (a: Answers) => a.device !== 'pouch'

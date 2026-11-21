@@ -41,7 +41,7 @@ async function run(deviceLabel, tried) {
     await click('.cta')
   }
   const end = await page.locator('.device').innerText()
-  console.log(`${deviceLabel} / ${tried}: ${path.length} screens -> ${end.includes('Welcome in') ? 'REACHED END' : 'STUCK'}\n  ${path.join(' > ')}`)
+  console.log(`${deviceLabel} / ${tried}: ${path.length} screens -> ${end.includes("You're in") ? 'REACHED APP' : 'STUCK'}\n  ${path.join(' > ')}`)
 }
 
 for (const [d, t] of [['Disposable vape', '2–5 times'], ['Pod vape', 'No, this is my first time'], ['Refillable vape', 'Once'], ['Nicotine pouches', "I've lost count"], ['Vape and pouches', '2–5 times']]) {

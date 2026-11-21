@@ -533,7 +533,7 @@ function Commit({ c }: { c: Ctx }) {
         {!has && <span className="sig-hint">Sign here with your finger</span>}
         {has && <button className="sig-clear" onClick={() => { cv.current!.getContext('2d')!.clearRect(0, 0, 680, 340); setHas(false) }}>Clear</button>}
       </div>
-      <Bottom><CTA disabled={!has} onClick={() => { c.set({ signed: true }); c.next() }}>I commit</CTA></Bottom>
+      <Bottom><CTA disabled={!has} onClick={() => { c.set({ signed: true, signature: cv.current!.toDataURL('image/png') }); c.next() }}>I commit</CTA></Bottom>
     </div>
   )
 }

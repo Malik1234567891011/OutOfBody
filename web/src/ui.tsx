@@ -20,14 +20,29 @@ export function Icon({ name, size = 22 }: { name: string; size?: number }) {
     case 'shield': return <svg {...p}><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.2-7.5 9.5-4.3-1.3-7.5-5-7.5-9.5V6z" /><path d="M8.8 12l2.2 2.2 4.4-4.4" /></svg>
     case 'chart': return <svg {...p}><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>
     case 'star': return <svg {...p} fill="currentColor" stroke="none"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" /></svg>
+    case 'today': return <svg {...p}><circle cx="12" cy="12" r="8.5" /><path d="M12 3.5a8.5 8.5 0 018.5 8.5" strokeWidth={3} /></svg>
+    case 'you': return <svg {...p}><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20.5c1-3.8 4-5.8 7.5-5.8s6.5 2 7.5 5.8" /></svg>
+    case 'plus': return <svg {...p} strokeWidth={2.4}><path d="M12 5v14M5 12h14" /></svg>
+    case 'flag': return <svg {...p}><path d="M5 21V4M5 4h11l-2 4 2 4H5" /></svg>
+    case 'widget': return <svg {...p}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="3.5" /><rect x="3.5" y="13.5" width="17" height="7" rx="2" /></svg>
+    case 'book': return <svg {...p}><path d="M4 5.5A2 2 0 016 3.5h13v15H6a2 2 0 00-2 2z" /><path d="M4 20.5V5.5M8 8h7" /></svg>
+    case 'pen': return <svg {...p}><path d="M4 20l4-1 11-11-3-3L5 16z" /><path d="M14 7l3 3" /></svg>
+    case 'sun': return <svg {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" /></svg>
+    case 'moon': return <svg {...p}><path d="M19.5 14.5A8 8 0 019.5 4.5a8 8 0 1010 10z" /></svg>
+    case 'chev': return <svg {...p}><path d="M9 5l7 7-7 7" /></svg>
+    case 'trash': return <svg {...p}><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13" /></svg>
+    case 'leaf': return <svg {...p}><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15z" /><path d="M5 19l8-8" /></svg>
+    case 'heart': return <svg {...p}><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0112 7.3 4.3 4.3 0 0119.5 10c0 5.4-7.5 10-7.5 10z" /></svg>
+    case 'clock': return <svg {...p}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg>
+    case 'refresh': return <svg {...p}><path d="M19.5 12a7.5 7.5 0 11-2.2-5.3M19.5 4.5v4h-4" /></svg>
     default: return null
   }
 }
 
-export function StatusBar({ dark = true }: { dark?: boolean }) {
+export function StatusBar({ dark = true, time = '9:41' }: { dark?: boolean; time?: string }) {
   return (
     <div className="statusbar" style={{ color: dark ? '#fff' : '#000' }}>
-      <span className="sb-time">9:41</span>
+      <span className="sb-time">{time}</span>
       <span className="sb-icons">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="5" y="5.5" width="3" height="6.5" rx="1" /><rect x="10" y="3" width="3" height="9" rx="1" /><rect x="15" y="0" width="3" height="12" rx="1" /></svg>
         <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.5c2.3 0 4.4.9 6 2.4l1.2-1.3A10.3 10.3 0 008 .7C5.2.7 2.7 1.8.8 3.6L2 4.9a8.5 8.5 0 016-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3a6.8 6.8 0 00-9.2 0l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zm0 3.5c-.6 0-1.1.2-1.5.6L8 11.8l1.5-1.6c-.4-.4-.9-.6-1.5-.6z" /></svg>
