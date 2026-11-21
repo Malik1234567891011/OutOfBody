@@ -80,8 +80,7 @@ export function PaywallP1({ a, next, close }: { a: Answers; next: () => void; cl
       </div>
       <Bottom>
         <p className="fine center ok"><Icon name="check" size={14} /> No payment due now</p>
-        <CTA onClick={next}>Try for $0.00</CTA>
-        <p className="fine center">Just {money(PRICE).replace('$', '$')} {CUR} per year (${perWeek}/wk)</p>
+        <CTA onClick={next}>Continue</CTA>
       </Bottom>
     </div>
   )
