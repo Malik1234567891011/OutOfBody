@@ -14,8 +14,8 @@ export function Plan({ nav }: { nav: Nav }) {
       <div className={`lungs-card ${usesVape(s.answers) ? '' : 'plain'}`}>
         {usesVape(s.answers) ? <>
           {/* linear cross-fade: 0% = before only, 100% = after only */}
-          <img src="/img/lungs-before.jpg" alt="" className="cmp-img" style={{ opacity: 1 - d.progress }} />
-          <img src="/img/lungs-after.jpg" alt="" className="cmp-img" style={{ opacity: d.progress }} />
+          <img src="/img/lungs-before.jpg" alt="" className="cmp-img lc-before" style={{ opacity: 1 - d.progress }} />
+          <img src="/img/lungs-after.jpg" alt="" className="cmp-img lc-after" style={{ opacity: d.progress }} />
         </> : <div className="plain-steps">{s.budgets.map((b, i) => <i key={i} className={i < d.weekIdx || d.free ? 'past' : i === d.weekIdx ? 'on' : ''} style={{ height: `${12 + (b / Math.max(1, ...s.budgets)) * 78}%` }} />)}</div>}
         <div className="lc-fade" />
         <div className="lc-foot">

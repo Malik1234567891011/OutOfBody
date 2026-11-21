@@ -301,3 +301,6 @@ button.plan-sel { display: block; width: 100%; text-align: left; }
 .pst-1 { font-size: 16px; letter-spacing: -.2px; white-space: nowrap; }
 .pst-2 { font-size: 14px; }
 .pst-price { font-size: 16px; white-space: nowrap; }
+/* make the progress change readable: smoky/dim before, bright clear after */
+.lc-before { filter: saturate(.75) brightness(.72) contrast(1.15) sepia(.15); }
+.lc-after { filter: brightness(1.12) saturate(1.05); }
