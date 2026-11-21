@@ -1,0 +1,46 @@
+name: OutOfBody
+options:
+  bundleIdPrefix: com.malikshourbaji
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+packages:
+  SuperwallKit:
+    url: https://github.com/superwall/Superwall-iOS
+    from: 4.19.1
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: Q7ZLXMG4SB
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  OutOfBody:
+    type: application
+    platform: iOS
+    sources:
+      - path: OutOfBody
+    dependencies:
+      - package: SuperwallKit
+    settings:
+      base:
+        PRODUCT_NAME: OutOfBody
+        PRODUCT_BUNDLE_IDENTIFIER: com.malikshourbaji.outofbody
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UILaunchScreen_BackgroundColor: LaunchBG
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: OutOfBody
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+        INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+schemes:
+  OutOfBody:
+    build:
+      targets:
+        OutOfBody: all
+    run:
+      config: Debug
+      storeKitConfiguration: OutOfBody/Resources/OutOfBody.storekit

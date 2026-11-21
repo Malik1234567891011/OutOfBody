@@ -1,0 +1,38 @@
+{
+  "identifier" : "0B0D1E01",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [ ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_CA",
+    "_storefront" : "CAN",
+    "_storeKitErrors" : [ ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21610001",
+      "localizations" : [ ],
+      "name" : "OutOfBody Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [ ], "codeOffers" : [ ], "winbackOffers" : [ ],
+          "displayPrice" : "39.99", "familyShareable" : false, "groupNumber" : 1,
+          "internalID" : "6761610001",
+          "introductoryOffer" : { "internalID" : "6761610101", "numberOfPeriods" : 1, "paymentMode" : "free", "subscriptionPeriod" : "P1W" },
+          "localizations" : [ { "description" : "Your step-down plan, lock-screen tracker and craving SOS", "displayName" : "OutOfBody Annual", "locale" : "en_CA" } ],
+          "productID" : "oob_annual_3999", "recurringSubscriptionPeriod" : "P1Y", "referenceName" : "Annual (7-day free trial)",
+          "subscriptionGroupID" : "21610001", "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [ ], "codeOffers" : [ ], "winbackOffers" : [ ],
+          "displayPrice" : "3.99", "familyShareable" : false, "groupNumber" : 2,
+          "internalID" : "6761610002",
+          "localizations" : [ { "description" : "Your step-down plan, billed weekly", "displayName" : "OutOfBody Weekly", "locale" : "en_CA" } ],
+          "productID" : "oob_weekly_399", "recurringSubscriptionPeriod" : "P1W", "referenceName" : "Weekly",
+          "subscriptionGroupID" : "21610001", "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : { "major" : 4, "minor" : 0 }
+}
