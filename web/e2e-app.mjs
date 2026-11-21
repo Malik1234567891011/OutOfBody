@@ -43,7 +43,7 @@ assert.equal(await d.locator('.toast').count(), 0)
 step('undo toast gone after 5 s')
 
 // 4. SOS: breathe, skip after 20 s, mark beaten
-await d.locator('.sos-pill').click()
+await d.locator('.tab-sos').click()
 await d.getByText('Breathe. This craving will pass in a few minutes.').waitFor()
 await tap('Breathe with me')
 assert.equal(await d.locator('.br-skip.hidden').count(), 1, 'skip hidden before 20 s')
@@ -134,7 +134,7 @@ step('quit day -> free mode -> slip resets the run')
 // 13. vape anyway logs one hit
 await page.goto(`${base}?app=1&preset=disposable&scenario=midweek&screen=none`)
 const left0 = Number(await ringNum())
-await d.locator('.sos-pill').click()
+await d.locator('.tab-sos').click()
 await tap("I'm going to vape anyway")
 await tap('Log 1 hit')
 assert.equal(Number(await ringNum()), left0 - 1)

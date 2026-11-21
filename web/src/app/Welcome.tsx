@@ -19,8 +19,8 @@ export function Welcome({ step: step0, nav }: { step: number; nav: Nav }) {
     <Sheet className="welcome-sheet">
       <div key={step} className="w-step in-r">
         {step === 1 && <>
-          <Confetti top={250} n={44} />
-          <div className="breath-orb small" style={{ top: 250 }} />
+          <Confetti top={222} n={44} spread={0.75} around />
+          <div className="breath-orb small" style={{ top: 222 }} />
           <div className="w-center">
             <div className="ready-check big"><Icon name="check" size={44} /></div>
             <h1 className="hero w-h1">You're in{name ? `, ${name}` : ''}.</h1>

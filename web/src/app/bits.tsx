@@ -23,13 +23,14 @@ export function Ring({ size, stroke, frac, color, track = 'rgba(255,255,255,.08)
 }
 
 const COLORS = ['#4fe3b8', '#ffb547', '#ff6b6b', '#8fd3ff', '#f3f5f9', '#c9a7ff']
-export function Confetti({ n = 36, top = 160, spread = 1 }: { n?: number; top?: number; spread?: number }) {
+// `around`: a tight burst that stays around an icon and never falls onto the headline below it.
+export function Confetti({ n = 36, top = 160, spread = 1, around = false }: { n?: number; top?: number; spread?: number; around?: boolean }) {
   const still = isStill()
   const bits = useMemo(() => [...Array(n)].map((_, i) => {
     const ang = (i / n) * Math.PI * 2 + (i % 3) * 0.3
     const dist = (90 + ((i * 37) % 110)) * spread
-    return { dx: Math.cos(ang) * dist * 1.25, dy: Math.sin(ang) * dist * 0.75 + 60, r: (i * 73) % 360, c: COLORS[i % COLORS.length], w: 6 + (i % 3) * 2, delay: (i % 6) * 25 }
-  }), [n, spread])
+    return { dx: Math.cos(ang) * dist * (around ? 1.1 : 1.25), dy: around ? Math.sin(ang) * dist * (Math.sin(ang) < 0 ? 0.6 : 0.2) - 24 * spread : Math.sin(ang) * dist * 0.75 + 60, r: (i * 73) % 360, c: COLORS[i % COLORS.length], w: 6 + (i % 3) * 2, delay: (i % 6) * 25 }
+  }), [n, spread, around])
   return (
     <div className={`confetti ${still ? 'still' : ''}`} style={{ top }} aria-hidden>
       {bits.map((b, i) => (

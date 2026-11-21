@@ -3,7 +3,7 @@ import type { Answers } from '../calc'
 import { APP_NAME, Icon, StatusBar } from '../ui'
 import { type AppState, type Source, StoreCtx, derive, earned, freshState, load, save, now, setClock, midnight, dayKey, uid, erase } from './store'
 import { scenario } from './scenarios'
-import { haptic, Confetti, clockStr } from './bits'
+import { haptic, Confetti } from './bits'
 import { Today } from './Today'
 import { Plan } from './Plan'
 import { You } from './You'
@@ -123,18 +123,20 @@ function AppShell({ initial, persist, screen, tab: tab0 }: { initial: AppState; 
 
   return (
     <StoreCtx.Provider value={{ s, d, update, haptic }}>
-      <StatusBar time={clockStr(d.t)} />
+      <StatusBar />
       <div className="app">
         <div className="app-scroll" key={tab}>
           {tab === 'today' && <Today nav={nav} focus={screen?.startsWith('checkin') ? 'checkin' : undefined} />}
           {tab === 'plan' && <Plan nav={nav} />}
           {tab === 'you' && <You nav={nav} />}
         </div>
-        <button className="sos-pill" onClick={() => { haptic(20); setOverlay({ kind: 'sos', step: 'interrupt' }) }}>
-          <Icon name="wind" size={19} /> SOS
-        </button>
         <nav className="tabbar">
-          {(['today', 'plan', 'you'] as Tab[]).map((t) => (
+          {(['today', 'plan', 'sos', 'you'] as const).map((t) => t === 'sos' ? (
+            <button key={t} className="tab tab-sos" aria-label="SOS" onClick={() => { haptic(20); setOverlay({ kind: 'sos', step: 'interrupt' }) }}>
+              <span className="sos-disc"><Icon name="wind" size={22} /></span>
+              <span>SOS</span>
+            </button>
+          ) : (
             <button key={t} className={`tab ${tab === t ? 'on' : ''}`} onClick={() => nav.setTab(t)}>
               <Icon name={t === 'plan' ? 'chart' : t} size={23} />
               <span>{t === 'today' ? 'Today' : t === 'plan' ? 'Plan' : 'You'}</span>
@@ -155,7 +157,7 @@ function AppShell({ initial, persist, screen, tab: tab0 }: { initial: AppState; 
         )}
         {celebrate && (
           <div className="celebrate-dim">
-            <Confetti top={250} />
+            <Confetti top={300} around />
             <div className="celebrate">
               <div className="cel-badge"><Icon name="star" size={26} /></div>
               <div className="cel-t">{celebrate.title}</div>

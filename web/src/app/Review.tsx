@@ -20,7 +20,7 @@ export function Review({ nav }: { nav: Nav }) {
   }
   return (
     <Sheet className="review-sheet">
-      {!rough && <Confetti top={200} n={30} />}
+      {!rough && <Confetti top={96} n={30} spread={0.8} around />}
       <div className="rv-body">
         <p className="eyebrow center">Step-down day</p>
         <h1 className="hero rv-h">Week {w} done.</h1>

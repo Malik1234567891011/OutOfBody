@@ -85,7 +85,7 @@ export function Sos({ step: step0, nav }: { step: SosStep; nav: Nav }) {
     const n = d.beaten
     return (
       <Sheet className="sos-sheet win" tone="calm">
-        <Confetti top={230} />
+        <Confetti top={252} spread={0.8} around />
         <div className="sos-body mid">
           <div className="win-badge"><Icon name="check" size={40} /></div>
           <h1 className="sos-h center">Craving beaten.<br />That's {n}.</h1>

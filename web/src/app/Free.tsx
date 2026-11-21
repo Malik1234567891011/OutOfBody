@@ -82,7 +82,7 @@ export function QuitDay({ nav }: { nav: Nav }) {
   }
   return (
     <Sheet className="quit-sheet">
-      <Confetti top={170} n={50} spread={1.2} />
+      <Confetti top={192} n={50} spread={0.8} around />
       <div className="breath-orb small" style={{ top: 190 }} />
       <div className="q-body">
         <div className="ready-check big"><Icon name="leaf" size={36} /></div>
