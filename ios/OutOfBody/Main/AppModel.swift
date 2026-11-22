@@ -136,6 +136,13 @@ final class AppModel: ObservableObject {
     }
 
     func open(_ o: Overlay?) {
+        // Closing SOS must not animate: the breathing TimelineView(.animation) keeps the removal
+        // transition from finishing, leaving an invisible SOS layer that swallows every tap.
+        if o == nil, case .sos = overlay {
+            var t = Transaction(); t.disablesAnimations = true
+            withTransaction(t) { overlay = nil }
+            return
+        }
         withAnimation(Env.still ? nil : .timingCurve(0.2, 0.8, 0.2, 1, duration: 0.38)) { overlay = o }
     }
 
